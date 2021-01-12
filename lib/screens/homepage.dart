@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:zeta/screens/intro.dart';
+import 'package:zeta/screens/settingsPage.dart';
 //void main() => runApp(MyApp());
 
-class homePage extends StatelessWidget {
+class homePage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = 'Details';
@@ -176,3 +177,69 @@ class homePage extends StatelessWidget {
 
 
 
+class homePage extends StatefulWidget {
+  @override
+  _homePageState createState() => _homePageState();
+}
+
+class _homePageState extends State<homePage> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  List<Widget> _widgetOptions = <Widget>[
+    /*Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),*/
+    homePage2(),
+
+    homePage2(),
+
+    settingsPage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      /*appBar: AppBar(
+        title: const Text('WiFiBreaker'),
+      ),*/
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items:  <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text(''),
+          ),
+          BottomNavigationBarItem(
+            //icon: Image.asset("assets/images/plus.png",),
+              icon: Icon(Icons.add_box, size: 50,),
+              /*icon: ImageIcon(
+              AssetImage("assets/images/plus.png"),
+              //color: Color(0xFF3A5A98),
+            ),*/
+              title: Text('')
+            //title: text('business')
+            //title: Text('Business'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            title: Text(''),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        //selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.purple,
+        onTap: _onItemTapped,
+      ),
+    );
+  }
+}
