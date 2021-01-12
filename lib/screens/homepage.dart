@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zeta/screens/intro.dart';
 import 'package:zeta/screens/settingsPage.dart';
-//void main() => runApp(MyApp());
+import 'package:zeta/screens/dashboard.dart';
+
+
 
 class homePage2 extends StatelessWidget {
   @override
@@ -191,7 +193,7 @@ class _homePageState extends State<homePage> {
       'Index 0: Home',
       style: optionStyle,
     ),*/
-    homePage2(),
+    dashboardHome(),
 
     homePage2(),
     homePage2(),
