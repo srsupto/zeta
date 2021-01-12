@@ -194,6 +194,7 @@ class _homePageState extends State<homePage> {
     homePage2(),
 
     homePage2(),
+    homePage2(),
 
     settingsPage(),
   ];
@@ -214,6 +215,7 @@ class _homePageState extends State<homePage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type : BottomNavigationBarType.fixed,
         items:  <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -221,7 +223,7 @@ class _homePageState extends State<homePage> {
           ),
           BottomNavigationBarItem(
             //icon: Image.asset("assets/images/plus.png",),
-              icon: Icon(Icons.add_box, size: 50,),
+              icon: Icon(Icons.add_box),
               /*icon: ImageIcon(
               AssetImage("assets/images/plus.png"),
               //color: Color(0xFF3A5A98),
@@ -229,6 +231,10 @@ class _homePageState extends State<homePage> {
               title: Text('')
             //title: text('business')
             //title: Text('Business'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            title: Text(''),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
