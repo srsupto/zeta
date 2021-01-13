@@ -235,17 +235,17 @@ class _homePageState extends State<homePage> {
             //title: Text('Business'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.favorite),
             title: Text(''),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.account_box),
             title: Text(''),
           ),
         ],
         currentIndex: _selectedIndex,
         //selectedItemColor: Colors.amber[800],
-        selectedItemColor: Colors.purple,
+        selectedItemColor: Colors.red[700],
         onTap: _onItemTapped,
       ),
     );

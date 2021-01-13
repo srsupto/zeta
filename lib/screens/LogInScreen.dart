@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-const kPrimaryColor = Color(0xFF2196F3);
-const kPrimaryLightColor = Color(0xFFF1E6FF);
+const kPrimaryColor = Color(0xFFD32F2F);
+const kPrimaryLightColor = Color(0xFFFFFFFF);
 
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Body(),
     );
   }
@@ -31,10 +32,11 @@ class Body extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.03),
-            SvgPicture.asset(
-              "assets/icons/login.svg",
-              height: size.height * 0.35,
-            ),
+              Image.asset("assets/Mobile-login.jpg", height: size.height * 0.35,),
+//            SvgPicture.asset(
+//              "assets/icons/lognew.svg",
+//              height: size.height * 0.35,
+//            ),
             SizedBox(height: size.height * 0.03),
             RoundedInputField(
               hintText: "Your email address",
@@ -88,25 +90,12 @@ class Background extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Image.asset(
-              "assets/images/main_top.png", color: Colors.blue[200],
-              width: size.width * 0.35,
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: Image.asset(
-              "assets/images/login_bottom.png", color: Colors.blue[300],
-              width: size.width * 0.4,
-            ),
-          ),
+
           child,
         ],
       ),
+
+
     );
   }
 }
@@ -163,7 +152,7 @@ class TextFieldContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       width: size.width * 0.8,
       decoration: BoxDecoration(
-        color: Colors.blue[50],
+        color: Colors.grey[100],
         borderRadius: BorderRadius.circular(29),
       ),
       child: child,
@@ -228,14 +217,14 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
       children: <Widget>[
         Text(
           login ? "Existing Customer? " : "Already have an Account ? ",
-          style: TextStyle(color: kPrimaryColor),
+          style: TextStyle(color: Colors.grey[600]),
         ),
         GestureDetector(
           onTap: press,
           child: Text(
             login ? "Sign Up" : "Sign In",
             style: TextStyle(
-              color: kPrimaryColor,
+              color: Colors.blue,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -262,6 +251,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: signUpBody(),
     );
   }
@@ -285,10 +275,8 @@ class signUpBody extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.001),
-            SvgPicture.asset(
-              "assets/icons/signup.svg",
-              height: size.height * 0.35,
-            ),
+            Image.asset("assets/Mobile-login.jpg", height: size.height * 0.35,),
+
             RoundedInputField(
               hintText: "Your Phone Number",
               onChanged: (value) {},
@@ -311,9 +299,9 @@ class signUpBody extends StatelessWidget {
                         FlatButton(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(color: Color(0xFF2196F3))),
+                              side: BorderSide(color: Color(0xFFD32F2F))),
                           color: Colors.white,
-                          textColor: Color(0xFF2196F3),
+                          textColor: Color(0xFFD32F2F),
                           padding: EdgeInsets.all(15.0),
                           onPressed: () {},
                           child: Text(
@@ -327,11 +315,11 @@ class signUpBody extends StatelessWidget {
                         RaisedButton(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(color: Color(0xFF2196F3))),
+                              side: BorderSide(color: Color(0xFFD32F2F))),
                           onPressed: () {
                             Navigator.of(context).pushReplacementNamed('/homePage');
                           },
-                          color: Color(0xFF2196F3),
+                          color: Color(0xFFD32F2F),
                           padding: EdgeInsets.all(15.0),
                           textColor: Colors.white,
                           child: Text("Guest View",
@@ -403,7 +391,7 @@ class OrDivider extends StatelessWidget {
             child: Text(
               "OR",
               style: TextStyle(
-                color: kPrimaryColor,
+                color: Colors.grey[600],
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -446,15 +434,15 @@ class SocalIcon extends StatelessWidget {
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           border: Border.all(
-            width: 2,
-            color: Colors.red[200],
+            width: 1,
+            color: Colors.redAccent,
           ),
           shape: BoxShape.circle,
         ),
         child: SvgPicture.asset(
           iconSrc,
-          height: 20,
-          width: 20, color: Colors.red[700],
+          height: 16,
+          width: 16, color: Colors.red[700],
         ),
       ),
     );
