@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zeta/screens/intro.dart';
-import 'package:zeta/screens/settingsPage.dart';
+import 'package:zeta/screens/postPage.dart';
+import 'package:zeta/screens/profilePage.dart';
 import 'package:zeta/screens/dashboard.dart';
 
 
@@ -195,10 +195,10 @@ class _homePageState extends State<homePage> {
     ),*/
     dashboardHome(),
 
-    homePage2(),
-    homePage2(),
+    PostPage(),
+    PostPage(),
 
-    settingsPage(),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {

@@ -278,7 +278,7 @@ class signUpBody extends StatelessWidget {
             Image.asset("assets/Mobile-login.jpg", height: size.height * 0.35,),
 
             RoundedInputField(
-              hintText: "Your Phone Number",
+              hintText: "Your email address",
               onChanged: (value) {},
             ),
             RoundedInputField(
@@ -330,10 +330,7 @@ class signUpBody extends StatelessWidget {
                 ),
               ],
             ),
-//            RoundedButton(
-//              text: "SIGNUP",
-//              press: () {},
-//            ),
+
 
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(

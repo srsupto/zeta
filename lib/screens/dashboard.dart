@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:zeta/screens/postPage.dart';
+import 'package:zeta/screens/subcategory.dart';
 
 
 
@@ -134,31 +136,43 @@ class GridDashboard extends StatelessWidget {
           crossAxisSpacing: 18,
           mainAxisSpacing: 18,
           children: myList.map((data) {
-            return Container(
-              decoration: BoxDecoration(
-                  color: Color(color), borderRadius: BorderRadius.circular(10)),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    data.img,
-                    width: 42, color: Colors.red[700],
-                  ),
-                  SizedBox(
-                    height: 14,
-                  ),
-                  Text(
-                    data.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            return InkWell(
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Color(color), borderRadius: BorderRadius.circular(10)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
 
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
+                    Image.asset(
+                      data.img,
+                      width: 42, color: Colors.red[700],
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Text(
+                      data.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
 
 
-                ],
+                  ],
+                ),
               ),
+
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SubCategory()),
+                );
+              },
+
             );
+
+
+
           }).toList()),
     );
   }
